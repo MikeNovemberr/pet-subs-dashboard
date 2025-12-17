@@ -1,8 +1,8 @@
 'use client';
 
 import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from '@/components/ui/sidebar';
-import { MainMenuGroup } from '@/components/AppSidebarMenu';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarSeparator } from '@/components/ui/sidebar';
+import { MainMenuGroup, SidebarHeaderComp } from '@/components/AppSidebarMenu';
 
 const items = [
   {
@@ -35,7 +35,8 @@ const items = [
 export default function AppSidebar() {
   return (
     <Sidebar variant="sidebar" collapsible="icon">
-      <SidebarHeader />
+      <SidebarHeaderComp />
+      <SidebarSeparator />
       <SidebarContent>
         <MainMenuGroup label="Dashboard" items={items} />
       </SidebarContent>

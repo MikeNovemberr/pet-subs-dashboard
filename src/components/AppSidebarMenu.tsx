@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { LucideIcon } from 'lucide-react';
 import {
   SidebarGroup,
@@ -10,7 +11,9 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarHeader,
 } from '@/components/ui/sidebar';
+import { SidebarLogoButton } from '@/components/SidebarLogo';
 
 export type SidebarNavItem = {
   title: string;
@@ -37,5 +40,17 @@ export function MainMenuGroup({ label, items }: { label: string; items: SidebarN
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>
+  );
+}
+
+export function SidebarHeaderComp() {
+  return (
+    <SidebarHeader className="py-5">
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarLogoButton />
+        </SidebarMenuItem>
+      </SidebarMenu>
+    </SidebarHeader>
   );
 }

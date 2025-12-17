@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Bolt, CreditCard, LogOut, Moon, ShieldPlus, Sun, User } from 'lucide-react';
+import { Bolt, CreditCard, LogOut, Moon, ShieldPlus, Sun, User, Languages } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   DropdownMenu,
@@ -14,9 +14,11 @@ import {
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { useI18n } from '@/i18n/i18n';
 
 const AppNavbar = () => {
   const { theme, setTheme } = useTheme();
+  const { locale, setLocale } = useI18n();
   return (
     <nav className="flex items-center justify-between p-4">
       {/* Left Side */}
@@ -37,6 +39,27 @@ const AppNavbar = () => {
             <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+        {/* Language menu (right next to theme) */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon" aria-label="Change language">
+              <Languages className="h-[1.2rem] w-[1.2rem]" />
+            </Button>
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>Language</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem onClick={() => setLocale('en_US')}>
+              English {locale === 'en_US' ? '✓' : ''}
+            </DropdownMenuItem>
+
+            <DropdownMenuItem onClick={() => setLocale('sr_RS')}>
+              Serbian {locale === 'sr_RS' ? '✓' : ''}
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
         {/* User menu */}

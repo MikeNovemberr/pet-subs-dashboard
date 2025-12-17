@@ -1,20 +1,20 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-    semi: true,
-    singleQuote: true,
-    trailingComma: 'all',
-    printWidth: 120,
-    tabWidth: 2,
-    useTabs: false,
+  semi: true,
+  singleQuote: true,
+  trailingComma: 'all',
+  printWidth: 120,
+  tabWidth: 2,
+  useTabs: false,
 
-    bracketSpacing: true,
-    bracketSameLine: false,
-    arrowParens: 'always',
+  bracketSpacing: true,
+  bracketSameLine: false,
+  arrowParens: 'always',
 
-    jsxSingleQuote: false,
-    jsxBracketSameLine: false,
+  jsxSingleQuote: false,
+  jsxBracketSameLine: false,
 
-    endOfLine: 'lf',
+  endOfLine: 'lf',
 
-    plugins: ['prettier-plugin-tailwindcss'],
-}
+  plugins: ['prettier-plugin-tailwindcss'],
+};
