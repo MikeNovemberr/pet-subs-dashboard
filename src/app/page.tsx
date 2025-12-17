@@ -1,13 +1,13 @@
-import { redirect } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
 
-export default function RootPage() {
-  // Logic:
-  // 1. Check if user has a session (we will add this later with Supabase/Auth)
-  // const isLoggedIn = false;
-
-  // 2. If NOT logged in -> go to Login
-  // if (!isLoggedIn) redirect("/login");
-
-  // 3. If Logged in (or for now, while building) -> go to Dashboard
-  redirect('/dashboard');
+export default function HomePage() {
+  return (
+    <main className="flex h-screen items-center justify-center">
+      <Button variant="outline" size="lg" className="rounded-full">
+        <Plus />
+        Click me
+      </Button>
+    </main>
+  );
 }
